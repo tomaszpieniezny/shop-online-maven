@@ -39,4 +39,8 @@ public class Payment {
         this.method = method;
         this.status = status;
     }
+
+    public Payment(int id, enumMethod enumMethod, enumStatus enumStatus) {
+
+    }
 }

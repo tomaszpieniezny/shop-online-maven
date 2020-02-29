@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
 @Component
 public class OrdersMapper {
 
-    public Orders orders(OrdersDto ordersDto) {
+    public Orders mapToOrders(OrdersDto ordersDto) {
         return new Orders(
                 ordersDto.getId(),
                 ordersDto.getDateOfPayment(),

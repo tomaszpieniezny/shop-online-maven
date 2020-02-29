@@ -15,9 +15,13 @@ public class UserAccountService {
     private UserAccountDao userAccountDao;
 
     public UserAccount saveUserAccount(final UserAccount userAccount) {
-        return userAccountDao.save(userAccount);
+        if (userAccount.getLogin().matches("^[A-Za-z0-9]+(?:[ _-][A-Za-z0-9]+)*$") &
+                userAccount.getPassword().matches("(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[^a-zA-Z0-9])(?=\\\\S+$).{6,18}")) {
+            return userAccountDao.save(userAccount);
+        } else {
+            throw new RuntimeException("Login or Password is not correct");
+        }
     }
-
     public List<UserAccount> findAllUserAccount() {
         return userAccountDao.findAll();
     }

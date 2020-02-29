@@ -25,6 +25,10 @@ public class ShoppingCart {
         this.quantity = quantity;
     }
 
+    public ShoppingCart (int id, long quantity) {
+
+    }
+
     @ManyToMany(cascade = CascadeType.ALL)
     @JoinTable(
             name = "Join_Product_Shopping_Cart",

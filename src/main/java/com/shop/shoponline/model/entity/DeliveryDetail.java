@@ -39,4 +39,8 @@ public class DeliveryDetail {
         this.postcode = postcode;
         this.houseNumber = houseNumber;
     }
+
+
+    public DeliveryDetail(int id, String street, String city, String postcode, String houseNumber) {
+    }
 }

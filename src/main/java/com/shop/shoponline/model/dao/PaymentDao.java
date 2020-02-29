@@ -1,6 +1,7 @@
 package com.shop.shoponline.model.dao;
 
-import com.shop.shoponline.model.entity.DeliveryDetail;
+import com.shop.shoponline.model.entity.Orders;
+import com.shop.shoponline.model.entity.Payment;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -10,14 +11,15 @@ import java.util.Optional;
 
 @Transactional
 @Repository
-public interface DeliveryDetailDao extends CrudRepository<DeliveryDetail, Long> {
+public interface PaymentDao extends CrudRepository<Payment, Long> {
 
-    @Override
-    DeliveryDetail save(DeliveryDetail deliveryDetail);
 
-    Optional<DeliveryDetail> findById(int id);
+    List<Payment> findAll();
+
+    Optional<Payment> findById(int id);
 
     void deleteById(int id);
 
-    List<DeliveryDetail> findAll();
+    @Override
+    Payment save(Payment payment);
 }
